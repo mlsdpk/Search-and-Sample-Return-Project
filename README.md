@@ -4,6 +4,6 @@
 # Search and Sample Return Project
 
 
-![alt text][image_0] 
+![alt text][image_0]
 
-This project is modeled after the [NASA sample return challenge](https://www.nasa.gov/directorates/spacetech/centennial_challenges/sample_return_robot/index.html) and it will give you first hand experience with the three essential elements of robotics, which are perception, decision making and actuation.  You will carry out this project in a simulator environment built with the Unity game engine. 
+This project is modeled after the [NASA Sample Return Robot Challenge](https://www.nasa.gov/directorates/spacetech/centennial_challenges/sample_return_robot/index.html) and we can get experience with the three essential elements of robotics, which are perception, decision making and actuation.  We will carry out this project in a simulator environment built with the Unity game engine. All the setup codes and simulator are referenced from original [Udacity Github Repo](https://github.com/udacity/RoboND-Rover-Project).
