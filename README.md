@@ -1,5 +1,8 @@
 [//]: # (Image References)
 [image_0]: ./misc/rover_image.jpg
+[image_1]: ./misc/sample.png
+[image_2]: ./misc/color-channels.png
+[image_3]: ./misc/color-threshold.png
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 # Search and Sample Return Project
 
@@ -47,3 +50,29 @@ python drive_rover.py
 ## Project Walkthrough
 
 Lets dive into some details implementations of the project. First step is image analysis of the navigable terrain.
+
+### Reading in Color Images
+
+In order to navigate autonomously through the environment, we will use 320x160 pixel camera images to determine where it is possible to drive. Now, we are going to use the following sample image for our analysis.
+
+![alt text][image_1]  
+
+We can explore what it's size and datatype are as well as minimum and maximum values in the array by using *numpy*.
+
+```
+# Import the "numpy" package for working with arrays
+import numpy as np
+print(image.dtype, image.shape, np.min(image), np.max(image))
+# uint8 (160, 320, 3) 0 255
+```
+So, here we can see it's an 8-bit unsigned integer array (uint8), where the size of the array is (160, 320, 3) meaning the image size is 160 pixels in the y-direction (height), 320 pixels in the x-direction (width) and it has 3 layers or "color channels".
+
+The three color channels of the image are red, green and blue or "RGB" for short. We can also look at each color channel side by side.
+
+![alt text][image_2]
+
+### Color Thresholding
+
+Now we can see that, while the mountains are relatively dark (low intensity values) in all three color channels, both the ground and the sky are brighter (higher intensity) in the red, green and blue channels. However, in all cases it looks like the ground is a bit brighter than the sky, so we can identify pixels associated with the ground using a simple color threshold.
+
+![alt text][image_3]
